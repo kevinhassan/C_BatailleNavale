@@ -8,12 +8,12 @@
 #include "bateauX.h"
 #include "bateau.h"
 
-typedef struct Position;
-struct Position{
+typedef struct position;
+struct position{
     int x;
     int y;
 };
-typedef Position *Position;
+typedef position* Position;
 
 Position creerPosition(int x, int y); /* creer une position en x,y*/
 int getXPos(Position p); /*retourne la coordonnee x*/
