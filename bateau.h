@@ -13,7 +13,7 @@ struct bateau {
     int longueur;
     TListe positions;
 };
-typedef bateau *Bateau;
+typedef bateau* Bateau;
 
 
 Bateau creerBateau(Position p, char sens, int l); /*Creer un bateau de position de tete p, avec les nouvelles position qui suivent le sens de s.*/

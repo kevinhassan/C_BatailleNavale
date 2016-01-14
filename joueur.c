@@ -14,14 +14,17 @@ int idJoueur(Joueur j){
 bool bateauxNonCoulee(Joueur j)
 {
 	/*Renvoie True s'il reste des bateaux en jeu au joueur.*/
-	return !EstVide(j->ensembleBat);
+	return !EstVide(j->ensembleBat);//Méthode du type de la liste chainée
 }
 Joueur placementBateaux(Joueur j)
 {
 	/* Fait placer au joueur j ses bateaux de taille fixée.*/
-
+	//----------------------------------
+	//Cette fonction n'est pas utilisée
 }
 Bateaux bateauxJoueur(Joueur j)
 {
 	/*Recupère la collection de bateaux de joueurs.*/
+	return j->ensembleBat;
 }
+
