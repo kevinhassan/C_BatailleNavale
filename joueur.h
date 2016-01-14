@@ -9,7 +9,7 @@
 #include "position.h"
 
 
-typedef struct joueur;
+typedef struct joueur joueur;
 struct joueur{
 	bool actif = False;//On impose aux joueurs d'être inactif en début de partie jusqu'au placement des bateaux
 	int idJoueur;

@@ -7,9 +7,12 @@
 #include "bateauX.h"
 #include "bateau.h"
 #include "position.h"
-typedef struct Partie Partie ;
+typedef struct partie partie;
+struct partie
+{
 
-
+};
+typedef partie* Partie;
 
 Partie creerPartie(); /* Créer une partie, complete la structure comme necessaire à l'initialisation */
 Partie joueurSuivant(Partie p); /* Change le joueur actif et le joueur passif. Le joueur actif devient passif et inversement */

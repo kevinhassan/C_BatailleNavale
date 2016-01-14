@@ -8,7 +8,7 @@
 #include "bateauX.h"
 #include "bateau.h"
 
-typedef struct position;
+typedef struct position position;
 struct position{
     int x;
     int y;

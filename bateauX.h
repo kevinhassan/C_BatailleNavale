@@ -7,7 +7,7 @@
 #include "partie.h"
 #include "bateau.h"
 #include "position.h"
-typedef struct Bateaux Bateaux;
+typedef struct bateaux bateaux;
 
 Bateaux creerBateaux(); /* Creer un collection de bateaux vide.*/
 int nombreBateaux(Bateaux bx); /*Indique le nombre de bateaux en jeu dans la collection Bx.*/
