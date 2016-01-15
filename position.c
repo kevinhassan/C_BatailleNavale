@@ -36,7 +36,7 @@ bool comparerPosition(Position p1, Position p2)
 bool enVuePosition(Position p1, Position p2)
 {
     /* Retourne True si les position ont au moins une coordonnée identique*/
-    return (getXPos(p1)==getXPos(p2) && getYPos(p1)!=getYPos(p2)) || (getXPos(p1)!=getXPos(p2) && getYPos(p1)==getYPos(p2));
+    return (getXPos(p1)==getXPos(p2)|| getYPos(p1)==getYPos(p2));
 }
 
 bool positionValide(Position p)
