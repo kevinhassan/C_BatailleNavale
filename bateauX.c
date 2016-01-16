@@ -1,3 +1,5 @@
+#include "bateauX.h"
+
 Bateaux creerBateaux()
 {
 	/* Creer un collection de bateaux vide.*/

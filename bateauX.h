@@ -3,10 +3,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "bool.h"
-#include "joueur.h"
 #include "partie.h"
 #include "bateau.h"
 #include "position.h"
+
 typedef struct bateaux bateaux;
 
 Bateaux creerBateaux(); /* Creer un collection de bateaux vide.*/

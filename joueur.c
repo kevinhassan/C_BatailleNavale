@@ -1,3 +1,5 @@
+#include "joueur.h"
+
 Joueur creerJoueur(int id)
 {
 	/*Creé un joueur avec id pour l'identifier.*/

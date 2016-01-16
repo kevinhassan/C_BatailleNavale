@@ -3,10 +3,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "bool.h"
-#include "partie.h"
 #include "bateauX.h"
-#include "bateau.h"
-#include "position.h"
+#include "joueur.h"
 
 
 typedef struct joueur joueur;

@@ -1,3 +1,5 @@
+#include "bateau.h"
+
 Bateau creerBateau(Position p, char sens, int l)
 {
     /*Creer un bateau de position de tete p, avec les nouvelles position qui suivent le sens de s.*/

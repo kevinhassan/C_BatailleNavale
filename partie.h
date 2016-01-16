@@ -4,13 +4,14 @@
 #include <stdio.h>
 #include "bool.h"
 #include "joueur.h"
-#include "bateauX.h"
-#include "bateau.h"
 #include "position.h"
+
 typedef struct partie partie;
 struct partie
 {
-
+	Joueur J1;
+	Joueur J2;
+	bool finie;
 };
 typedef partie* Partie;
 
@@ -22,6 +23,6 @@ char* phaseTir(Partie p, Position pos); /* Determine si p touche un bateau du jo
 Partie phaseDestruction(Partie p, Position pos); /*Si on est sur que la position touche, retire la position du bateau touche.
                                                     Si celui si n'a plus de position, le supprime de l'ensemble des bateaux.
                                                     Si le joueur passif n'a plus de bateau la condition de vitoire est remplie. */
-bool partieFinie(Partie p ); /* Declare que la partie est finie si True. */
+bool partieFinie(Partie p) ; /* Declare que la partie est finie si True. */
 
 #endif
