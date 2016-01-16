@@ -65,7 +65,7 @@ char* phaseTir(Partie p, Position pos)
 		}
 		//Si l'entier renvoyer par trouverBateau n'est pas valide alors il n'existe pas
 		//Dans ce cas il n'est pas touche donc a l'eau
-		else if(p->J1->trouverBateau(bateauxJoueur(p->J1)) <=0)
+		else if(p->J1->trouverBateau(bateauxJoueur(p->J1)) == -1)
 		{
 			return 'e';
 		}
@@ -73,6 +73,7 @@ char* phaseTir(Partie p, Position pos)
 		{
 			//Dans ce cas le bateau est touche
 			phaseDestruction(p, pos);
+			return 't';
 		}
 	}
 	else
