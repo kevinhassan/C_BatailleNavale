@@ -2,20 +2,37 @@
 
 Bateaux creerBateaux()
 {
-	/* Creer un collection de bateaux vide.*/
-	
+	Bateaux* bx = malloc(sizeof(BateauX));
+	return bx;
 }
 int nombreBateaux(Bateaux bx)
 {
-	/*Indique le nombre de bateaux en jeu dans la collection Bx.*/
+	return bx->NbOccurences();
 }
 Bateau bateauNumero(Bateaux Bx, int i)
 {
-	/*Renvoie le bateau identifier par i.*/	
+	Bateau* bateau = bx->ensembleBat->bat;
+	if(bateau->numero == i)
+	{
+		return bateau;	
+	}
+	else
+	{
+		return NULL;
+	}
 } 
 Bateaux ajouterBateau(Bateaux Bx, Bateau B)
 {
 	/*Ajoute le bateau b à la collection Bx, et donc augmente le nombre de bateau de la liste.*/
+	if (EstVide(Bx->ensembleBat))
+	{
+		AjoutDebut(Bx->ensembleBat,B);
+	}
+	else
+	{
+		AjoutFin(Bx->ensembleBat,B);
+	}
+	return Bx;
 }
 Bateaux retirerBateau(Bateaux Bx, int i)
 {
@@ -28,6 +45,7 @@ bool positionOccupee(Bateaux Bx, Position p)
 bool enVue(Bateaux Bx, Position p)
 {
 	/* Renvoie True si un bateau de la collection Bx est en vue de la position p.*/
+	return Bx->bat->positions->x == p->x || Bx->bat->positions->y == p->y; 
 } 
 int trouverBateau(Bateaux bx, Position p)
 {

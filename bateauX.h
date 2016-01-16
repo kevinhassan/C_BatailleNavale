@@ -9,6 +9,10 @@
 #include "TListeBateau.h"
 
 typedef struct bateaux bateaux;
+struct bateaux {
+    TListeBateau* ensembleBat;
+};
+typedef bateaux* Bateaux;
 
 Bateaux creerBateaux(); /* Creer un collection de bateaux vide.*/
 int nombreBateaux(Bateaux bx); /*Indique le nombre de bateaux en jeu dans la collection Bx.*/

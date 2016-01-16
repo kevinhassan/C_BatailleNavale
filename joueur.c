@@ -5,7 +5,6 @@ Joueur creerJoueur(int id)
 	/*Creé un joueur avec id pour l'identifier.*/
 	Joueur* j = malloc(sizeof(Joueur));
 	j->idJoueur = id;
-	BateauX *bateaux = malloc(sizeof(BateauX)); //Pas sûr
 	return j;
 }
 
@@ -22,7 +21,8 @@ Joueur placementBateaux(Joueur j)
 {
 	/* Fait placer au joueur j ses bateaux de taille fixée.*/
 	//----------------------------------
-	//Cette fonction n'est pas utilisée
+	//Cette fonction n'est pas utilisée dans le main
+	
 }
 Bateaux bateauxJoueur(Joueur j)
 {

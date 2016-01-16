@@ -58,14 +58,14 @@ char* phaseTir(Partie p, Position pos)
 	/* Determine si p touche un bateau du joueur passif(et lance dans ce cas la Phase de destruction), si un bateau est en vue ou si le tir est à l'eau ou coulé  */
 	if(p->J1->actif == False)
 	{
-		if(p->J1->enVue(bateauxJoueur(p->J1),pos))	
+		if(enVue(p->J1->bateauxJoueur(p->J1),pos))	
 		//Si dans l'ensembe de bateau de J1 un bateau est en vue
 		{
 			return 'v';
 		}
 		//Si l'entier renvoyer par trouverBateau n'est pas valide alors il n'existe pas
 		//Dans ce cas il n'est pas touche donc a l'eau
-		else if(p->J1->trouverBateau(bateauxJoueur(p->J1)) == -1)
+		else if(p->J1->bateauxJoueur(p->J1)->trouverBateau(bateauxJoueur(p->J1)) == -1)
 		{
 			return 'e';
 		}
@@ -78,14 +78,14 @@ char* phaseTir(Partie p, Position pos)
 	}
 	else
 	{
-		if(p->J2->enVue(bateauxJoueur(p->J2),pos))	
-		//Si dans l'ensembe de bateau de J1 un bateau est en vue
+		if(enVue(p->J2->bateauxJoueur(p->J2),pos))	
+		//Si dans l'ensembe de bateau de J2 un bateau est en vue
 		{
 			return 'v';
 		}
 		//Si l'entier renvoyer par trouverBateau n'est pas valide alors il n'existe pas
 		//Dans ce cas il n'est pas touche donc a l'eau
-		else if(p->J2->trouverBateau(bateauxJoueur(p->J2)) <=0)
+		else if(p->J2->bateauxJoueur(p->J2)->trouverBateau(bateauxJoueur(p->J2)) == -1)
 		{
 			return 'e';
 		}
@@ -112,7 +112,7 @@ Partie phaseDestruction(Partie p, Position pos)
 		batJ1 = supprPosition(batJ1,pos);
 		if(EstCoule(batJ1))
 		{
-			retirerBateau(bateauxJoueur(p->J1),numBat);
+			bateauxJoueur(p->J1)->retirerBateau(bateauxJoueur(p->J1),numBat);
 		}
 	}
 	else
@@ -122,7 +122,7 @@ Partie phaseDestruction(Partie p, Position pos)
 		batJ2 = supprPosition(batJ2,pos);
 		if(EstCoule(batJ2))
 		{
-			retirerBateau(bateauxJoueur(p->J2),numBat);
+			bateauxJoueur(p->J2)->retirerBateau(bateauxJoueur(p->J2),numBat);
 		}
 	}
 	//On vérifie que les deux joueurs possèdent un ensemble de bateau non vide

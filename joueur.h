@@ -21,6 +21,4 @@ bool bateauxNonCoulee(Joueur j); /*Renvoie True s'il reste des bateaux en jeu au
 Joueur placementBateaux(Joueur j); /* Fait placer au joueur j ses bateaux de taille fixée.*/
 Bateaux bateauxJoueur(Joueur j);/*Recupère la collection de bateaux de joueurs.*/
 
-
-
 #endif

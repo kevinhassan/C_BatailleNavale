@@ -10,7 +10,8 @@
 typedef struct bateau bateau;
 struct bateau {
     int longueur;
-    TListePosition positions;
+    int numero;
+    TListePosition* positions;
 };
 typedef bateau* Bateau;
 
