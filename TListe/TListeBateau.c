@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "TListe.h"
+#include "TListeBateau.h"
 
 
 /*CréerListe: → TListeEntier – – retourne la liste vide : EstVide(CréerListe()) retourne true.*/
@@ -12,17 +12,17 @@ TListe CreerListe()
 
 
 /* EstVide: TListeEntier → bool – – retourne true si la liste est vide, false sinon. */
-int EstVide(TListe l)
+bool EstVide(TListe l)
 {
   return l==NULL;
 }
 
 
 /* AjoutDébut: TListeEntier × int → TListeEntier */
-TListe AjoutDebut(TListe l, int val)
+TListe AjoutDebut(TListe l, Bateau b)
 {
   TListe liTemp = malloc(sizeof(TListeEntier));
-  liTemp->valeur = val;
+  liTemp->bat = b;
   liTemp->suivant = l;
   liTemp->precedent = CreerListe();
   return liTemp;
@@ -35,7 +35,7 @@ void AfficheListe(TListe l)
   TListe liTemp = l;
   printf("Affichage de la liste :\n");
   while(!EstVide(liTemp)) {
-    printf("%d", liTemp->valeur);
+    printf("%d", liTemp->bat);
     liTemp = liTemp->suivant;
     if(!EstVide(liTemp)) {
       printf(" -> ");
@@ -47,10 +47,10 @@ void AfficheListe(TListe l)
 
 /* AjoutFin: TListeEntier × int → TListeEntier – – retourne la liste obtenue en ajoutant l’entier donnée en fin de
 liste ; si la liste est vide, se comporte comme AjoutDébut. */
-TListe AjoutFin(TListe l, int val)
+TListe AjoutFin(TListe l, Bateau b)
 {
   if (EstVide(l)) {
-    return AjoutDebut(l, val);
+    return AjoutDebut(l, b);
   }
   else {
     TListe liTemp = malloc(sizeof(TListeEntier));
@@ -60,7 +60,7 @@ TListe AjoutFin(TListe l, int val)
     }
     k->suivant = liTemp;
     liTemp->precedent = k;
-    liTemp->valeur = val;
+    liTemp->bat = b;
     liTemp->suivant = CreerListe();
     return l;
   }
@@ -71,7 +71,7 @@ TListe AjoutFin(TListe l, int val)
 int Premier(TListe l)
 {
   if (!EstVide(l)) {
-    return l->valeur;
+    return l->bat;
   }
   else {
     /* ERREUR */
@@ -89,7 +89,7 @@ int Dernier(TListe l)
     while (!EstVide(k->suivant)) {
       k = k->suivant;
     }
-    return k->valeur;
+    return k->bat;
   }
   else {
     /* ERREUR */
@@ -144,13 +144,13 @@ TListe SupprimerFin(TListe l)
 
 /* NbOccurences: TListeEntier × int → int – – retourne le nombre de fois où l'entier en paramètre apparaît dans la liste.
 Erreur si la liste est vide. */
-int NbOccurences(TListe l, int val)
+int NbOccurences(TListe l, Bateau b)
 {
   if (!EstVide(l)) {
     TListe k = l;
     int nbOcc = 0;
     while (!EstVide(k)) {
-      if (k->valeur == val)
+      if (k->bat == b)
         nbOcc = nbOcc + 1;
       k = k->suivant;
     }

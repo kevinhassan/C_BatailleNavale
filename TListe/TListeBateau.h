@@ -4,7 +4,7 @@
 typedef struct TListeEntier TListeEntier ;
 struct TListeEntier
 {
-    int valeur;
+    Bateau bat;
     struct TListeEntier *precedent;
     struct TListeEntier *suivant;
 };
@@ -12,16 +12,16 @@ struct TListeEntier
 typedef TListeEntier* TListe;
 
 TListe CreerListe();
-int EstVide(TListe l);
+bool EstVide(TListe l);
 void AfficheListe(TListe l);
 
-TListe AjoutDebut(TListe l, int val) ;
-TListe AjoutFin(TListe l, int val) ;
+TListe AjoutDebut(TListe l, Bateau b) ;
+TListe AjoutFin(TListe l, Bateau b) ;
 
-int Premier(TListe l);
-int Dernier(TListe l);
+Bateau Premier(TListe l);
+Bateau Dernier(TListe l);
 
 TListe SupprimerTete(TListe l);
 TListe SupprimerFin(TListe l);
 
-int NbOccurences(TListe l, int val);
+int NbOccurences(TListe l, Bateau b);

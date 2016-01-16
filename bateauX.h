@@ -6,6 +6,7 @@
 #include "partie.h"
 #include "bateau.h"
 #include "position.h"
+#include "TListeBateau.h"
 
 typedef struct bateaux bateaux;
 

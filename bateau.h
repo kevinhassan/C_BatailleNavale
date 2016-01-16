@@ -5,11 +5,12 @@
 #include "position.h"
 #include "bateau.h"
 #include "bool.h"
+#include "TListePosition.h"
 
 typedef struct bateau bateau;
 struct bateau {
     int longueur;
-    TListe positions;
+    TListePosition positions;
 };
 typedef bateau* Bateau;
 
