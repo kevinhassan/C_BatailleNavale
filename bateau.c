@@ -66,6 +66,5 @@ int getTaille(Bateau b)
 }
 
 /*
-    Il manque la fonction estTouche pour supprimer 
-    ensuite une position presente
+    Il manque la fonction a l'eau
 */ 
