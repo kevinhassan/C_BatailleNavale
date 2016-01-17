@@ -25,3 +25,5 @@ int trouverBateau(Bateaux bx, Position p); /* Renvoie un entier qui identifie le
 bool positionnnementBateauValide(Bateaux Bx, Position p, char s, int l); /* Verifie si un bateau de position de tete p, de longueur l et d'orientation s, sont valides et in-occupées.*/
 
 #endif
+
+

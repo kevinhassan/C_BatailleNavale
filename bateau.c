@@ -21,30 +21,33 @@ Bateau creerBateau(Position p, char sens, int l)
 }
 Bateau supprPosition(Bateau b, Position p)
 {
-    bool flag = False;
+    /*bool flag = False;
     /* Supprime la position p du bateau quand on sait qu'elle est la et diminue ainsi la longueur du bateau*/
-    if(positionPresente(b, p))
+    k = b->positions;
+
+    while (k != p && k->suivant != NULL)
     {
-        //Si l'une des positions du bateau est égale à celle cherché (tant qu'on est pas arrivé au bout)
-        while (b->positions != p & b->positions != NULL)
-        {
-            b->positions->suivant;
-        }
-        b->positions->x = NULL;
-        b->positions->y = NULL;
+        k=k->suivant;
+    }//On se trouve sur la liste à supprimer
+
+    if (comparerPosition(k,p))//On supprime les positions
+    {
+        k->suivant->precedent = k->precedent;
+        k->precedent->suivant = k->suivant;
+        k->suivant = NULL;
+        k->precedent = NULL;
         b->longueur = b->longueur-1;
     }
-    //Chainage arriere à faire ?
+    return b;
 }
 bool positionPresente(Bateau b, Position p)
 {
     /* Retourne True si cette position appartient au bateau. */
     bool present = False;
-    while (b->positions != p & b->positions != NULL){
+    while (b->positions != p && b->positions != NULL){
         b->positions->suivant;
     }
-    return b->positions == p;
-    //Chainage arriere à faire ?
+    return comparerPosition(b->positions, p);
 }
 bool bateauEnVue(Bateau b, Position p)
 {
@@ -64,7 +67,3 @@ int getTaille(Bateau b)
     /*On récupère la taille du bateau*/
     return b->longueur;
 }
-
-/*
-    Il manque la fonction a l'eau
-*/ 

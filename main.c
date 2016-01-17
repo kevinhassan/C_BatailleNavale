@@ -63,5 +63,6 @@ char sensPosition() {
     char sens = "";
     println("Entrer le sens de votre bateau :\n(D : droite, G : gauche, H :  haut, B: bas):");
         scanf("%d", sens);
+        return sens;
 
 };
